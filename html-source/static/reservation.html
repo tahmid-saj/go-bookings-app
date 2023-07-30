@@ -139,7 +139,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-    console.log("I am printing from javascript");
+    let attention = Prompt();
 
     (function() {
         'use strict';
@@ -162,7 +162,9 @@
     document.getElementById("colorButton").addEventListener("click", function () {
       // notify("This is my message", "success");
 
-      notifyModal("title", "<em>Helo world</em>", "success", "my text for the button");
+      // notifyModal("title", "<em>Helo world</em>", "success", "my text for the button");
+
+      attention.success();
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -186,6 +188,20 @@
       });
     }
 
+    function Prompt() {
+      let toast = function() {
+        console.log("clicked button and get toast");
+      }
+
+      let success = function() {
+        console.log("clicked button and get success");
+      }
+
+      return {
+        toast: toast,
+        success: success,
+      }
+    }
 
 </script>
 
