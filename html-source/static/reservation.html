@@ -136,6 +136,8 @@
 
 <script src="https://unpkg.com/notie"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     console.log("I am printing from javascript");
 
@@ -158,7 +160,9 @@
     })();
 
     document.getElementById("colorButton").addEventListener("click", function () {
-        notify("This is my message", "success");
+      // notify("This is my message", "success");
+
+      notifyModal("title", "<em>Helo world</em>", "success", "my text for the button");
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -170,6 +174,15 @@
       notie.alert({
         type: msgType, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
         text: msg
+      });
+    }
+
+    function notifyModal(title, text, icon, confirmButtonText) {
+      Swal.fire({
+        title: title,
+        html: text,
+        icon: icon,
+        confirmButtonText: confirmButtonText
       });
     }
 
